@@ -2,7 +2,7 @@
 	angular.module('todoSrv',[])
 	.service('Todo',['$window',function  ($window) {
 		//从浏览器中获取数据
-		var tasks = JSON.parse($window.localStorage.getItem('todo'));
+		var tasks = JSON.parse($window.localStorage.getItem('todo')) || [];
 
 		//向外暴露tasks的特权方法
 		this.getData = function  () {
